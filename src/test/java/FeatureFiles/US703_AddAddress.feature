@@ -7,29 +7,17 @@ Feature: Add new Address Functionality
   Scenario Outline: Add new Address Functionality
     And Click on the Element in LocatorClass
       | customerMenuDropdown |
-
-    And Click on the Element in LocatorClass
       | myAccount |
-
-    And Click on the Element in LocatorClass
       | manageAddresses |
-
-    And Click on the Element in LocatorClass
       | buttonAddNewAddress |
 
     And User sending the Keys in LocatorClass
       | phoneNumber | <phone> |
-
-    And User sending the Keys in LocatorClass
       | inputAddressStreet1 | <street> |
-
-    And User sending the Keys in LocatorClass
       | inputAddressCity | <city> |
 
     And User select the Keys in LocatorClass
       | selectCountry | <country> |
-
-    And User select the Keys in LocatorClass
       | selectRegion | <region> |
 
     And User sending the Keys in LocatorClass
@@ -37,8 +25,6 @@ Feature: Add new Address Functionality
 
     And Click on the Element in LocatorClass
       | shippingAddress |
-
-    And Click on the Element in LocatorClass
       | buttonSaveAddress |
 
     Then Success message should be displayed
