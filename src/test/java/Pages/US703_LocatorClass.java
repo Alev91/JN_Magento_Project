@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class US703_LocatorClass extends ParentPage {
+public class US703_LocatorClass extends Parent {
 
     public US703_LocatorClass() {
         PageFactory.initElements(GWD.getDriver(), this);
