@@ -22,6 +22,12 @@ public class ParentPage {
         element.click();
     }
 
+    public void myJSClick(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+        js.executeScript("arguments[0].click();", element);
+    }
+
     public void mySendKeys(WebElement element,String text){
         wait.until(ExpectedConditions.visibilityOf(element));
         scrollToElement(element);
