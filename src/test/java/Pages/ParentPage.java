@@ -1,19 +1,18 @@
 package Pages;
 
 import Utilities.GWD;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ParentPage {
 
-
+    protected WebDriver driver = GWD.getDriver();
     public WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
 
     public void myClick(WebElement element) {
@@ -27,6 +26,7 @@ public class ParentPage {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         js.executeScript("arguments[0].click();", element);
     }
+
 
     public void mySendKeys(WebElement element,String text){
         wait.until(ExpectedConditions.visibilityOf(element));
@@ -46,4 +46,18 @@ public class ParentPage {
 
         new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
+    public void acceptCookies() {
+        List<WebElement> cookiesButtons = driver.findElements(By.cssSelector(".cookies-accept"));
+        if (!cookiesButtons.isEmpty()) {
+            for (WebElement button : cookiesButtons) {
+                if (button.isDisplayed()) {
+                    button.click();
+                    break;
+                }
+            }
+        }
+    }
 }
+
+
+
